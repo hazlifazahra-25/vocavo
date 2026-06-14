@@ -246,19 +246,52 @@ p { color: var(--muted); }
 .text-button { display: inline-flex; align-items: center; gap: 5px; padding: 5px; border: 0; color: var(--primary-dark); background: transparent; font-size: 11px; font-weight: 800; cursor: pointer; }
 .text-button svg { width: 15px; }
 .teaching-cta { width: 100%; margin-top: 20px; }
+.about-us {
+background: var(--white);
+}
 
-.about-us { background: var(--white); }
-.about-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 80px; align-items: center; }
-.about-grid .section-heading { margin: 0; }
-.mission-note { margin-top: 28px; display: flex; gap: 12px; padding: 18px; border-left: 3px solid var(--secondary); color: var(--muted); background: #f7f9f2; font-size: 13px; }
-.mission-note svg { width: 20px; flex: 0 0 auto; color: var(--primary); }
-.mission-note strong { display: block; color: var(--ink); font-family: "Poppins", sans-serif; }
-.team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-.team-card { padding: 24px; border: 1px solid #ebede6; border-radius: 20px; background: var(--white); box-shadow: var(--shadow-soft); }
-.team-avatar { width: 54px; height: 54px; display: grid; place-items: center; margin-bottom: 18px; border-radius: 18px; color: var(--primary-dark); background: #e1ecc6; font-family: "Poppins", sans-serif; font-weight: 800; }
-.avatar-two { background: #dbeae6; }.avatar-three { background: #efe0ca; }.avatar-four { background: #e8def0; }
-.team-card h3 { margin: 0 0 4px; font-size: 16px; }.team-card p { margin: 0; font-size: 11px; }
+.about-centered {
+max-width: 900px;
+margin: 0 auto;
+text-align: center;
+}
 
+.about-pill-group {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 14px;
+margin-top: 32px;
+}
+
+.about-pill {
+padding: 12px 20px;
+border-radius: 999px;
+background: #eef6df;
+color: var(--primary-dark);
+font-weight: 700;
+font-size: 14px;
+border: 1px solid #d8e7ba;
+}
+
+.mission-box {
+margin-top: 35px;
+padding: 28px;
+border-radius: 24px;
+background: #f7f9f2;
+border-left: 4px solid var(--secondary);
+box-shadow: 0 8px 24px rgba(47, 63, 38, 0.05);
+text-align: left;
+}
+
+.mission-box p {
+margin: 0;
+font-size: 15px;
+line-height: 1.8;
+}
+.feature-layout, .teacher-layout {
+  grid-template-columns: 1fr;
+}
 .site-footer { padding: 70px 0 22px; color: white; background: #385822; }
 .footer-grid { display: grid; grid-template-columns: 1.3fr .8fr 1fr; gap: 70px; padding-bottom: 45px; }
 .footer-brand { margin-bottom: 18px; color: white; }.footer-brand .brand-mark { background: #d9e9b5; }.footer-brand .brand-mark::before { background: var(--secondary); }
@@ -307,14 +340,14 @@ p { color: var(--muted); }
   .hero-visual { min-height: 560px; max-width: 620px; width: 100%; margin-inline: auto; }
   .three-card-grid { grid-template-columns: 1fr; }
   .benefit-card { min-height: 220px; }
-  .feature-layout, .teacher-layout, .about-grid { grid-template-columns: 1fr; }
+  .feature-layout, .teacher-layout {grid-template-columns: 1fr;
+  }
   .topic-grid { grid-template-columns: 1fr; }
   .topic-card { min-height: 250px; }
   .check-list { grid-template-columns: 1fr; }
   .detail-header { padding: 45px 38px; }
   .detail-body { padding: 40px 38px 48px; }
   .teacher-visual { min-height: 650px; }
-  .about-grid { gap: 45px; }
   .footer-grid { grid-template-columns: 1.3fr 1fr; }.footer-grid > div:last-child { grid-column: 1 / -1; }
 }
 
@@ -338,6 +371,5 @@ p { color: var(--muted); }
   .audio-player { flex-wrap: wrap; }.audio-timeline { min-width: calc(100% - 60px); }.episode-action { width: 100%; }.path-connector { margin-left: 19px; }
   .teacher-visual { min-height: 530px; }.teacher-visual img { max-height: 520px; }
   .resource-panel { padding: 23px 17px; }.resource-intro { align-items: flex-start; flex-direction: column; }.resource-card { grid-template-columns: 40px 1fr; padding: 14px; }.resource-icon { width: 40px; height: 40px; }.resource-card .text-button { grid-column: 2; }
-  .team-grid { grid-template-columns: 1fr 1fr; gap: 10px; }.team-card { padding: 18px; }
   .footer-grid { grid-template-columns: 1fr; gap: 34px; }.footer-grid > div:last-child { grid-column: auto; }.footer-bottom { flex-direction: column; }
 }
