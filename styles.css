@@ -349,7 +349,11 @@ line-height: 1.8;
   background: #385822;
   color: white;
 }
-.footer-grid { display: grid; grid-template-columns: 1.3fr .8fr 1fr; gap: 70px; padding-bottom: 45px; } .footer-grid {
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr .8fr 1fr;
+  gap: 70px;
+  padding-bottom: 45px;
   margin-top: -40px;
 }
 .footer-brand { margin-bottom: 18px; color: white; }.footer-brand .brand-mark { background: #d9e9b5; }.footer-brand .brand-mark::before { background: var(--secondary); }
@@ -402,11 +406,27 @@ line-height: 1.8;
   grid-template-columns: 1fr;
 }
   .menu-toggle { display: grid; }
-  .nav-menu { position: fixed; inset: 76px 0 auto; padding: 26px 20px 30px; display: none; grid-template-columns: 1fr; gap: 22px; border-top: 1px solid var(--line); background: white; box-shadow: 0 25px 35px rgba(47,63,38,.12); }
-  .nav-menu.open { display: grid; }
-  .nav-links { grid-column: 1; display: grid; gap: 6px; }
+   .nav-menu {
+    display: none;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .nav-menu.open {
+    display: grid;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
   .nav-links a { padding: 12px 8px; font-size: 16px; }.nav-links a::after { display: none; }
-  .nav-cta { grid-column: 1; justify-self: stretch; }
+    .nav-cta {
+    grid-column: auto;
+    justify-self: start;   /* biar gak ke kanan */
+    width: 100%;
+    margin-top: 16px;      /* jarak dari About Us */
+  }
   .hero { min-height: auto; padding-top: 65px; }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-copy { text-align: center; }.hero-copy .eyebrow { margin-inline: auto; }.hero h1, .hero-description { margin-inline: auto; }.hero-actions { justify-content: center; }
@@ -423,13 +443,39 @@ line-height: 1.8;
 }
 
 @media (max-width: 560px) {
+  .footer-wave svg {
+    height: 70px;
+  }
   .container { width: min(calc(100% - 28px), var(--container)); }
   .section-pad { padding: 68px 0; }
   .hero { padding-top: 48px; }
   .hero h1 { font-size: 45px; }
   .hero-description { font-size: 15px; }
-  .hero-actions { flex-direction: column; gap: 18px; }.hero-actions .button { width: 100%; }
-  .hero-visual { min-height: 455px; }.hero-visual img { max-height: 475px; }.phrase-card { top: 23%; right: -4px; }.lesson-card { left: -3px; bottom: 7%; }
+   .hero-actions .button {
+  width: auto;
+  min-width: 220px;
+}
+  .button-large {
+    min-height: 48px;
+    font-size: 14px;
+  }
+  .hero-visual {
+  min-height: 455px;
+}
+
+.hero-visual img {
+  max-height: 475px;
+}
+
+.phrase-card {
+  top: 23%;
+  right: -4px;
+}
+
+.lesson-card {
+  left: -3px;
+  bottom: 7%;
+}
   .floating-card { padding: 9px 10px; }.floating-icon, .lesson-check { width: 31px; height: 31px; }
   .feature-grid { grid-template-columns: 1fr; }
   .infographic-placeholder { min-height: 340px; padding: 30px 22px; }
