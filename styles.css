@@ -97,10 +97,42 @@ p { color: var(--muted); }
 .floating-card strong { display: block; color: var(--ink); font-family: "Poppins", sans-serif; font-size: 12px; }
 .floating-icon, .lesson-check { width: 35px; height: 35px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 11px; color: white; background: var(--primary); }
 .floating-icon svg, .lesson-check svg { width: 17px; }
-.phrase-card { top: 27%; right: -1%; }
-.lesson-card { left: 3%; bottom: 14%; }
-.lesson-check { border-radius: 50%; color: var(--primary-dark); background: var(--secondary); }
+.phrase-card {
+  top: 27%;
+  right: -1%;
+  animation: floatPhrase 3s ease-in-out infinite;
+}
 
+.lesson-card {
+  left: 3%;
+  bottom: 14%;
+  animation: floatLesson 3.5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+.lesson-check { border-radius: 50%; color: var(--primary-dark); background: var(--secondary); }
+@keyframes floatPhrase {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes floatLesson {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(-1deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
 .section-heading { max-width: 680px; margin-bottom: 42px; }
 .section-heading.centered { margin-inline: auto; text-align: center; }
 .section-heading.compact { margin-bottom: 32px; }
@@ -467,14 +499,34 @@ line-height: 1.8;
   max-height: 475px;
 }
 
-.phrase-card {
-  top: 23%;
-  right: -4px;
-}
+@media (max-width: 560px) {
+  .phrase-card {
+    top: 30%;
+    right: 6%;
+    transform: scale(0.82);
+  }
 
-.lesson-card {
-  left: -3px;
-  bottom: 7%;
+  .lesson-card {
+    left: 2%;
+    bottom: 18%;
+    transform: scale(0.82);
+  }
+}
+@media (max-width: 560px) {
+  .about-pill-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 kolom */
+    gap: 16px;
+    justify-items: center;
+  }
+
+  .about-pill {
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+    padding: 16px 12px;
+    font-size: 14px;
+  }
 }
   .floating-card { padding: 9px 10px; }.floating-icon, .lesson-check { width: 31px; height: 31px; }
   .feature-grid { grid-template-columns: 1fr; }
