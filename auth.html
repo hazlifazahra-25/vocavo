@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VOCAVO Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="auth-page">
+  <div class="auth-card">
+    <h1>Welcome to VOCAVO</h1>
+    <p>Choose how you want to enter</p>
+
+    <div class="auth-options">
+
+  <div class="auth-card">
+    <i data-lucide="book-open"></i>
+    <h2>Teacher</h2>
+    <p>Access premium teaching resources</p>
+    <button onclick="login('teacher')">Login as Teacher</button>
+  </div>
+
+  <div class="auth-card">
+    <i data-lucide="graduation-cap"></i>
+    <h2>Student</h2>
+    <p>Access podcasts and practice activities</p>
+    <button onclick="login('student')">Login as Student</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

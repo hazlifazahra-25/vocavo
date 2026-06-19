@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOCAVO | Resource Center</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" id="home">
+  <nav class="navbar container" aria-label="Primary navigation">
+
+    <a class="brand" href="index.html" aria-label="VOCAVO home">
+      <img src="assets/logo-vocavo-full1.png" alt="VOCAVO logo">
+    </a>
+
+    <button class="menu-toggle icon-button" type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="nav-menu">
+      <i data-lucide="menu" aria-hidden="true"></i>
+    </button>
+
+    <div class="nav-menu" id="nav-menu">
+      <div class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#why">About</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#teachers">For Teachers</a>
+        <a href="index.html#about-us">About Us</a>
+      </div>
+
+      <a class="button button-primary nav-cta" href="topics.html">
+        Explore Topic
+      </a>
+    </div>
+
+  </nav>
+</header>
+<main class="section-pad">
+  <div class="container">
+
+    <div class="section-heading centered">
+      <span class="section-kicker">Teacher Resources</span>
+      <h1>VOCAVO Resource Center</h1>
+      <p>Everything teachers need in one place.</p>
+    </div>
+
+<div class="resource-grid">
+
+  <article class="resource-card-big">
+    <div class="resource-icon-box">
+      <i data-lucide="book-open-text"></i>
+    </div>
+
+    <h2>Teacher Module</h2>
+
+    <p>
+      Complete lesson plans, timing allocation, classroom flow,
+      and teacher instructions.
+    </p>
+
+    <span class="resource-badge">3 Topics Available</span>
+
+    <a href="module.html" class="button button-primary">
+      Open Resource
+    </a>
+  </article>
+
+
+  <article class="resource-card-big">
+    <div class="resource-icon-box">
+      <i data-lucide="files"></i>
+    </div>
+
+    <h2>Worksheets</h2>
+
+    <p>
+      Pre-listening, while-listening, post-listening,
+      and speaking activities.
+    </p>
+
+    <span class="resource-badge">3 Topics Available</span>
+
+    <a href="worksheet.html" class="button button-primary">
+      Open Resource
+    </a>
+  </article>
+
+
+  <article class="resource-card-big">
+    <div class="resource-icon-box">
+      <i data-lucide="badge-check"></i>
+    </div>
+
+    <h2>Answer Keys</h2>
+
+    <p>
+      Sample answers, expected responses,
+      and evaluation rubric.
+    </p>
+
+    <span class="resource-badge">3 Topics Available</span>
+
+    <a href="answerkey.html" class="button button-primary">
+      Open Resource
+    </a>
+  </article>
+
+</div>
+
+    </div>
+  </div>
+</main>
+<script>
+const role = localStorage.getItem("userRole");
+
+if (role !== "teacher") {
+  window.location.href = "index.html";
+}
+</script>
+</body>
+</html>
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<script src="script.js"></script>
