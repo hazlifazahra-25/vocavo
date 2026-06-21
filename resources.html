@@ -31,9 +31,9 @@
         <a href="index.html#about-us">About Us</a>
       </div>
 
-      <a class="button button-primary nav-cta" href="topics.html">
-        Explore Topic
-      </a>
+     <a id="auth-btn" class="button button-primary nav-cta" href="topics.html">
+  Explore Topic
+</a>
     </div>
 
   </nav>
@@ -115,10 +115,26 @@
 </main>
 <script>
 const role = localStorage.getItem("userRole");
+const authBtn = document.getElementById("auth-btn");
 
 if (role !== "teacher") {
   window.location.href = "index.html";
 }
+
+if (role === "teacher" && authBtn) {
+  authBtn.textContent = "Logout";
+  authBtn.href = "#";
+
+  authBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    localStorage.removeItem("userRole");
+    window.location.href = "index.html";
+  });
+}
+<script>
+  lucide.createIcons();
+</script>
+</script>
 </script>
 </body>
 </html>

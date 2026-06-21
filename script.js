@@ -94,7 +94,12 @@ if (closeBtn && modal && viewer) {
 
 function login(role) {
   localStorage.setItem("userRole", role);
-  window.location.href = "index.html";
+
+  if (role === "teacher") {
+    window.location.href = "index.html";
+  } else {
+    window.location.href = "index.html";
+  }
 }
 
 function logout() {
@@ -193,4 +198,17 @@ function verifyOTP() {
   } else {
     alert("Wrong verification code.");
   }
+}
+const authBtn = document.getElementById("auth-btn");
+const role = localStorage.getItem("userRole");
+
+if (authBtn && role) {
+  authBtn.textContent = "Logout";
+  authBtn.href = "#";
+
+  authBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    localStorage.removeItem("userRole");
+    window.location.href = "index.html";
+  });
 }
